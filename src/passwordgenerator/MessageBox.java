@@ -46,7 +46,7 @@ public class MessageBox {
     Scene scene = new Scene(pane);
     JMetro jMetro = new JMetro(Style.LIGHT);
     jMetro.setScene(scene);
-    //stage.getIcons().add(new Image("/icons/warning.png"));
+    stage.getIcons().add(new Image("/icons/warning.png"));
     stage.setScene(scene);
     stage.showAndWait();
     }

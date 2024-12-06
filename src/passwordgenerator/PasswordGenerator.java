@@ -112,8 +112,8 @@ public class PasswordGenerator extends Application{
         Scene scn1 = new Scene(scrn1, 400, 350);
         JMetro jMetro = new JMetro(Style.LIGHT);
         jMetro.setScene(scn1);
-        /*Image img = new Image("/icons/pwg.png");
-        primaryStage.getIcons().add(img);*/
+        Image img = new Image("/icons/pwg.png");
+        primaryStage.getIcons().add(img);
         primaryStage.setScene(scn1);
         primaryStage.setTitle("Password Generator");
         primaryStage.setResizable(false);
@@ -175,7 +175,7 @@ public class PasswordGenerator extends Application{
     public boolean error(){
         boolean e = false;
         String tLetSt = tLe.getText();
-        if(tLetSt.isBlank() == true || tLetSt.contains(",") == true || tLetSt.contains(".") == true || Integer.valueOf(tLetSt) < 4 == true || Integer.valueOf(tLetSt) > 32 == true){
+        if(tLetSt.isEmpty() == true || tLetSt.contains(",") == true || tLetSt.contains(".") == true || Integer.valueOf(tLetSt) < 4 == true || Integer.valueOf(tLetSt) > 32 == true){
             e = true;
         }
         if(lc.isSelected() == false && uc.isSelected() == false && sy.isSelected() == false && nu.isSelected() == false){
@@ -188,7 +188,7 @@ public class PasswordGenerator extends Application{
     public void errorMessage(){
         String msg="";
         String tLetSt = tLe.getText();
-        if(tLetSt.isBlank() == true || tLetSt.contains(",") == true || tLetSt.contains(".") == true || Integer.valueOf(tLetSt) < 4 == true || Integer.valueOf(tLetSt) > 32 == true){
+        if(tLetSt.isEmpty() || tLetSt.contains(",") == true || tLetSt.contains(".") == true || Integer.valueOf(tLetSt) < 4 == true || Integer.valueOf(tLetSt) > 32 == true){
             msg += "You did not enter a valid length for your password.\n";
         }
         if(lc.isSelected() == false && uc.isSelected() == false && sy.isSelected() == false && nu.isSelected() == false){
